@@ -1,0 +1,14 @@
+:host {
+  padding: 12px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.new-task-field {
+  display: flex;
+  flex-direction: row;
+}
+
+.example-full-width {
+  width: 100%;
+}
