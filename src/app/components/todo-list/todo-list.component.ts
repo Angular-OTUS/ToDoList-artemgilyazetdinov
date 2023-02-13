@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BtnColor } from 'src/app/shared/customer-button/customer-button.component';
-import { TodoList } from "../../mock-todos";
+import { todoList } from "../../mock-todos";
 import { Todo } from "../../todo";
 
 @Component({
@@ -10,7 +10,7 @@ import { Todo } from "../../todo";
 })
 export class TodoListComponent implements OnInit {
   public btnColor: typeof BtnColor = BtnColor;
-  todos: Todo[] = TodoList;
+  todos: Todo[] = todoList;
   inputValue = '';
   isLoading = true;
 
@@ -18,22 +18,21 @@ export class TodoListComponent implements OnInit {
     setTimeout(() => this.isLoading = false, 500)
   }
 
-  getMaxCurrentId() {
-    return Math.max(...this.todos.map(todo => todo.id));
-  }
-
-  deleteItemTodo(itemId: number) {
+  deleteTodoItem(itemId: number) {
     this.todos = this.todos.filter(value => value.id != itemId);
   }
 
-  addNewTodo() {
+  onAddButtonClick() {
     const newTodo: Todo = {
-      id: this.getMaxCurrentId() + 1,
-      text: this.inputValue.trim(),
+      id: this.getMaxItemId() + 1,
+      text: this.inputValue.trim()
     }
     this.todos = [...this.todos, newTodo];
 
     this.inputValue = '';
   }
 
+  private getMaxItemId() {
+    return Math.max(...this.todos.map(todo => todo.id));
+  };
 }
