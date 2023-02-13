@@ -1,6 +1,6 @@
 <h1>ToDo List</h1>
 
-<app-todo-item *ngFor="let todo of todos" [todo]="todo" (deleteTodoItemEvent)="deleteItemTodo($event)"></app-todo-item>
+<app-todo-item class="task-list" *ngFor="let todo of todos" [todo]="todo" (onDelete)="deleteTodoItem($event)"></app-todo-item>
 
 <div class="new-task-field">
   <mat-form-field class="example-full-width">
@@ -8,7 +8,7 @@
     <input matInput placeholder="Add your new todo..." [(ngModel)]="inputValue">
   </mat-form-field>
 
-  <button type="btn" (click)="addNewTodo()" [disabled]="!inputValue.trim().length">
+  <button type="btn" (click)="onAddButtonClick()" [disabled]="!inputValue.trim().length">
     <span>Add task</span>
   </button>
 </div>

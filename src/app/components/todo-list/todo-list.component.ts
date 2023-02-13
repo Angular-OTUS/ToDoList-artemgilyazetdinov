@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TodoList } from "../../mock-todos";
+import { todoList } from "../../mock-todos";
 import { Todo } from "../../todo";
 
 @Component({
@@ -8,20 +8,16 @@ import { Todo } from "../../todo";
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent {
-  todos: Todo[] = TodoList;
+  todos: Todo[] = todoList;
   inputValue: string = '';
 
-  getMaxCurrentId() {
-    return Math.max(...this.todos.map(todo => todo.id));
-  };
-
-  deleteItemTodo(itemId: number) {
+  deleteTodoItem(itemId: number) {
     this.todos = this.todos.filter(value => value.id != itemId);
   };
 
-  addNewTodo() {
+  onAddButtonClick() {
     const newTodo: Todo = {
-      id: this.getMaxCurrentId() + 1,
+      id: this.getMaxItemId() + 1,
       text: this.inputValue.trim()
     }
     this.todos = [...this.todos, newTodo];
@@ -29,4 +25,7 @@ export class TodoListComponent {
     this.inputValue = '';
   }
 
+  private getMaxItemId() {
+    return Math.max(...this.todos.map(todo => todo.id));
+  };
 }

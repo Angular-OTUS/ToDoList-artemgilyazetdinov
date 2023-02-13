@@ -9,9 +9,9 @@ import { Todo } from 'src/app/todo';
 export class TodoItemComponent {
   @Input() todo!: Todo;
 
-  @Output() deleteTodoItemEvent = new EventEmitter<number>();
+  @Output() onDelete = new EventEmitter<number>();
 
-  onDeleteTodoHandler() {
-    this.deleteTodoItemEvent.emit(this.todo.id);
+  onDeleteButtonClick() {
+    this.onDelete.emit(this.todo.id);
   };
 }
