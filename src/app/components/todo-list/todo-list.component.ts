@@ -15,7 +15,6 @@ export class TodoListComponent implements OnInit {
   isLoading = true;
 
   ngOnInit() {
-    console.log('todos', this.todos)
     setTimeout(() => this.isLoading = false, 500);
   }
 
@@ -35,5 +34,5 @@ export class TodoListComponent implements OnInit {
 
   private getMaxItemId() {
     return Math.max(...this.todos.map(todo => todo.id));
-  }
+  };
 }
