@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BtnColor } from 'src/app/shared/customer-button/customer-button.component';
+import { BtnColor } from 'src/app/shared/todo-button/todo-button.component';
 import { todoList } from "../../mock-todos";
 import { Todo } from "../../todo";
 
@@ -9,13 +9,13 @@ import { Todo } from "../../todo";
   styleUrls: ['./todo-list.component.scss'],
 })
 export class TodoListComponent implements OnInit {
-  public btnColor: typeof BtnColor = BtnColor;
+  public BtnColor = BtnColor;
   todos: Todo[] = todoList;
   inputValue = '';
   isLoading = true;
 
   ngOnInit() {
-    setTimeout(() => this.isLoading = false, 500)
+    setTimeout(() => this.isLoading = false, 500);
   }
 
   deleteTodoItem(itemId: number) {
@@ -25,7 +25,7 @@ export class TodoListComponent implements OnInit {
   onAddButtonClick() {
     const newTodo: Todo = {
       id: this.getMaxItemId() + 1,
-      text: this.inputValue.trim()
+      text: this.inputValue.trim(),
     }
     this.todos = [...this.todos, newTodo];
 
@@ -34,5 +34,5 @@ export class TodoListComponent implements OnInit {
 
   private getMaxItemId() {
     return Math.max(...this.todos.map(todo => todo.id));
-  };
+  }
 }

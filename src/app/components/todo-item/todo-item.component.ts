@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { BtnColor } from 'src/app/shared/customer-button/customer-button.component';
+import { BtnColor } from 'src/app/shared/todo-button/todo-button.component';
 import { Todo } from 'src/app/todo';
 
 @Component({
@@ -8,12 +8,12 @@ import { Todo } from 'src/app/todo';
   styleUrls: ['./todo-item.component.scss'],
 })
 export class TodoItemComponent {
-  public btnColor: typeof BtnColor = BtnColor;
+  public BtnColor = BtnColor;
   @Input() todo!: Todo;
 
-  @Output() onDelete = new EventEmitter<number>();
+  @Output() delete = new EventEmitter<number>();
 
   onDeleteButtonClick() {
-    this.onDelete.emit(this.todo.id);
-  };
+    this.delete.emit(this.todo.id);
+  }
 }
