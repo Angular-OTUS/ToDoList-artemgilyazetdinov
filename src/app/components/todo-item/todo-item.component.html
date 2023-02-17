@@ -1,4 +1,6 @@
 <span>{{todo.text}}</span>
 
-<app-todo-button (btnClickHandler)="onDeleteButtonClick()" title="Delete"
+<span>{{todo.id}}</span>
+
+<app-todo-button (click)="onDeleteButtonClick()" title="Delete"
     [BtnColor]="BtnColor.Red"></app-todo-button>

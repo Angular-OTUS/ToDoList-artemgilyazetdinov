@@ -15,6 +15,7 @@ export class TodoListComponent implements OnInit {
   isLoading = true;
 
   ngOnInit() {
+    console.log('todos', this.todos)
     setTimeout(() => this.isLoading = false, 500);
   }
 

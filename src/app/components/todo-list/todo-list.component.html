@@ -1,9 +1,8 @@
 <h1>ToDo List</h1>
 
-<div *ngIf="!isLoading else elseBlock">
-  <app-todo-item *ngFor="let todo of todos" [todo]="todo" class="task-list"
-    (delete)="deleteTodoItem($event)"></app-todo-item>
-</div>
+<ng-template *ngIf="!isLoading else elseBlock" ngFor let-todo [ngForOf]="todos">
+  <app-todo-item [todo]="todo" class="task-item" (delete)="deleteTodoItem($event)"></app-todo-item>
+</ng-template>
 
 <div class="new-task-field">
   <mat-form-field class="example-full-width">
@@ -11,7 +10,7 @@
     <input matInput placeholder="Add your new todo..." [(ngModel)]="inputValue">
   </mat-form-field>
 
-  <app-todo-button title="Add todo" (btnClickHandler)="onAddButtonClick()" [isDisabled]="!inputValue.trim().length"
+  <app-todo-button title="Add todo" (click)="onAddButtonClick()" [isDisabled]="!inputValue.trim().length"
     [BtnColor]="BtnColor.Green"></app-todo-button>
 </div>
 
