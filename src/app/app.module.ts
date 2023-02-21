@@ -6,7 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
 import { TodoListComponent, TodoItemComponent } from './components';
-import { SharedModule } from './shared/shared-module.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [

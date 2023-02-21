@@ -16,7 +16,7 @@ export class TodoButtonComponent {
   @Output() btnClickHandler = new EventEmitter();
 
   @Input() title = '';
-  @Input() BtnColor = BtnColor.Default;
+  @Input() btnColor = BtnColor.Default;
 
   clickHandler() {
     this.btnClickHandler.emit();
