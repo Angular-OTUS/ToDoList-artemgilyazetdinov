@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { BtnColor } from 'src/app/shared/todo-button/todo-button.component';
+import { BtnColor } from 'src/app/shared/components/todo-button/todo-button.component';
 import { Todo } from 'src/app/todo';
 
 @Component({

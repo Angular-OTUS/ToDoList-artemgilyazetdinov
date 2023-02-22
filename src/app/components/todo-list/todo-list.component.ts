@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BtnColor } from 'src/app/shared/todo-button/todo-button.component';
+import { BtnColor } from 'src/app/shared/components/todo-button/todo-button.component';
 import { todoList } from "../../mock-todos";
 import { Todo } from "../../todo";
 
