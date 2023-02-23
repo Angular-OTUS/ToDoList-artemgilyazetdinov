@@ -2,7 +2,7 @@
   width: auto;
   display: flex;
   align-items: center;
-  height: 32px;
+  height: 40px;
   background-color: #ccc;
   border: black 1px;
   border-radius: 5px;
@@ -14,16 +14,5 @@
 
   span {
     flex-grow: 3;
-  }
-}
-
-button {
-  display: inline-block;
-  height: 100%;
-  background-color: #c40a0a;
-  color: #fafafa;
-
-  &:hover {
-    background-color: #aa0909;
   }
 }

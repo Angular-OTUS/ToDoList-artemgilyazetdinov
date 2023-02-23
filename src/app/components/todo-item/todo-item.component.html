@@ -1,6 +1,3 @@
-<span>
-    {{todo.text}}
-</span>
-<button type="btn" (click)="onDeleteButtonClick()">
-    <span>Delete</span>
-</button>
+<span>{{todo.text}}</span>
+
+<app-todo-button (click)="onDeleteButtonClick()" title="Delete" [btnColor]="BtnColor.Red"></app-todo-button>

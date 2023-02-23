@@ -13,6 +13,23 @@
   width: 100%;
 }
 
-.task-list {
+.task-item {
   margin: 0 0 1em 0;
+}
+
+.spinner {
+  margin: 0 auto;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: rgb(228, 30, 30);
+  border-left-color: rgb(228, 30, 30);
+  animation: spin 2s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }

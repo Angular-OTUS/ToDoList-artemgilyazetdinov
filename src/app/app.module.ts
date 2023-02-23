@@ -6,23 +6,24 @@ import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
 import { TodoListComponent, TodoItemComponent } from './components';
-
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoListComponent,
-    TodoItemComponent
+    TodoItemComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [
     AppComponent,
-    TodoListComponent
-  ]
+    TodoListComponent,
+  ],
 })
 export class AppModule { }

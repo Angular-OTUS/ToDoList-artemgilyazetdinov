@@ -1,6 +1,8 @@
 <h1>ToDo List</h1>
 
-<app-todo-item class="task-list" *ngFor="let todo of todos" [todo]="todo" (onDelete)="deleteTodoItem($event)"></app-todo-item>
+<ng-template *ngIf="!isLoading else loadingSpinner" ngFor let-todo [ngForOf]="todos">
+  <app-todo-item [todo]="todo" class="task-item" (delete)="deleteTodoItem($event)"></app-todo-item>
+</ng-template>
 
 <div class="new-task-field">
   <mat-form-field class="example-full-width">
@@ -8,7 +10,10 @@
     <input matInput placeholder="Add your new todo..." [(ngModel)]="inputValue">
   </mat-form-field>
 
-  <button type="btn" (click)="onAddButtonClick()" [disabled]="!inputValue.trim().length">
-    <span>Add task</span>
-  </button>
+  <app-todo-button title="Add todo" (click)="onAddButtonClick()" [isDisabled]="!inputValue.trim().length"
+    [btnColor]="BtnColor.Green"></app-todo-button>
 </div>
+
+<ng-template #loadingSpinner>
+  <div class="spinner"></div>
+</ng-template>
