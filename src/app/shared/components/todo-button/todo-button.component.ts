@@ -13,12 +13,7 @@ export enum BtnColor  {
 })
 export class TodoButtonComponent {
   @Input() isDisabled = false;
-  @Output() btnClickHandler = new EventEmitter();
 
   @Input() title = '';
   @Input() btnColor = BtnColor.Default;
-
-  clickHandler() {
-    this.btnClickHandler.emit();
-  }
 }
